@@ -56,4 +56,12 @@ class LoginPageCubit extends Cubit<LoginPageState> {
       ));
     }
   }
+
+  Future<void> signInwithGoogle({required credential}) async {
+    await FirebaseAuth.instance.signInWithCredential(credential);
+    emit(const LoginPageState(
+      errorMessage: '',
+      isLogged: true,
+    ));
+  }
 }

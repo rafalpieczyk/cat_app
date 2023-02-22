@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "378692841823",
+    "project_id": "catapp123",
+    "storage_bucket": "catapp123.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378692841823:android:db24166e047f2fb47f86ea",
+        "android_client_info": {
+          "package_name": "com.rafalpieczyk.cat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "378692841823-utol77j070e5hgaegr00o596thsv2f1j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPu1o2FBNwG3Wcttwa2htzygLErNLsYJs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "378692841823-a8i1qj2vd13omsu20o1vdvshi2ar97c6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "378692841823-3l28s2oj43aa63lnmk7pu57fp45pps2h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.rafalpieczyk.catApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
