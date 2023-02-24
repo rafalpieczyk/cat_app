@@ -1,16 +1,12 @@
 import 'package:cat_app/app/login/cubit/login_page_cubit_cubit.dart';
 import 'package:cat_app/main.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 // ignore: must_be_immutable
 class LoginPage extends StatefulWidget {
-  GoogleSignIn googleSignIn;
   LoginPage({
-    required this.googleSignIn,
     Key? key,
   }) : super(key: key);
   final emailController = TextEditingController();
@@ -115,9 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                                   password: widget.passwordController.text);
                               if (state.isLogged == true) {
                                 Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (_) => HomePage(
-                                          googleSignIn: widget.googleSignIn,
-                                        )));
+                                    builder: (_) => const HomePage()));
                               }
                             } else {
                               context.read<LoginPageCubit>().signIn(
@@ -125,9 +119,7 @@ class _LoginPageState extends State<LoginPage> {
                                   password: widget.passwordController.text);
                               if (state.isLogged == true) {
                                 Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (_) => HomePage(
-                                          googleSignIn: widget.googleSignIn,
-                                        )));
+                                    builder: (_) => const HomePage()));
                               }
                             }
                           },
@@ -170,27 +162,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         ElevatedButton(
                           onPressed: () async {
-                            GoogleSignInAccount? googleUser =
-                                await widget.googleSignIn.signIn();
-                            GoogleSignInAuthentication googleAuth =
-                                await googleUser!.authentication;
-                            OAuthCredential credential =
-                                GoogleAuthProvider.credential(
-                              accessToken: googleAuth.accessToken,
-                              idToken: googleAuth.idToken,
-                            );
-                            // ignore: use_build_context_synchronously
-                            context
-                                .read<LoginPageCubit>()
-                                .signInwithGoogle(credential: credential);
-                            if (state.isLogged == true) {
-                              // ignore: use_build_context_synchronously
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (_) => HomePage(
-                                        googleSignIn: widget.googleSignIn,
-                                      )));
-                            }
-                            // use the googleAuth object to sign in to Firebase
+                            context.read<LoginPageCubit>().googleLogin();
                           },
                           child: const Text('Sign in with Google'),
                         ),
