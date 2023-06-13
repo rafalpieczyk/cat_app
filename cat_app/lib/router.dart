@@ -1,6 +1,4 @@
-import 'package:cat_app/app/home/home_page.dart';
-import 'package:cat_app/app/login/login_page.dart';
-import 'package:cat_app/injection_container.dart';
+import 'package:cat_app/app/home/my_account_page/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
@@ -9,29 +7,21 @@ import 'main.dart';
 
 @injectable
 class CatRouter {
-  GoRouter router = GoRouter(
-    routes: [
+  final GoRouter router = GoRouter(
+    routes: <RouteBase>[
       GoRoute(
         path: '/',
-        pageBuilder: (context, state) {
-          return const MaterialPage(child: StartPage());
+        builder: (BuildContext context, GoRouterState state) {
+          return const StartPage();
         },
-      ),
-      GoRoute(
-        path: '/login',
-        pageBuilder: (context, state) {
-          return MaterialPage(child: LoginPage());
-        },
-      ),
-      GoRoute(
-        path: '/home',
-        pageBuilder: (context, state) {
-          return MaterialPage(
-            child: HomePage(
-              user: getIt(),
-            ),
-          );
-        },
+        routes: <RouteBase>[
+          GoRoute(
+            path: 'settings',
+            builder: (BuildContext context, GoRouterState state) {
+              return const SettingsPage();
+            },
+          ),
+        ],
       ),
     ],
   );
