@@ -1,5 +1,6 @@
 import 'package:cat_app/app/login/login_page.dart';
 import 'package:cat_app/app/home/default_page.dart';
+import 'package:cat_app/router.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -18,12 +19,14 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(),
-      localizationsDelegates: [GlobalMaterialLocalizations.delegate],
-      supportedLocales: [
+    return MaterialApp.router(
+      routeInformationParser: CatRouter().router.routeInformationParser,
+      routeInformationProvider: CatRouter().router.routeInformationProvider,
+      routerDelegate: CatRouter().router.routerDelegate,
+      localizationsDelegates: const [GlobalMaterialLocalizations.delegate],
+      supportedLocales: const [
         Locale('en'),
-        Locale('pl'),
+        // Locale('pl'),
       ],
     );
   }
