@@ -1,7 +1,7 @@
 import 'package:cat_app/app/login/cubit/login_page_cubit_cubit.dart';
-import 'package:cat_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // ignore: must_be_immutable
@@ -110,16 +110,14 @@ class _LoginPageState extends State<LoginPage> {
                                   email: widget.emailController.text,
                                   password: widget.passwordController.text);
                               if (state.isLogged == true) {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (_) => const HomePage()));
+                                context.go('/');
                               }
                             } else {
                               context.read<LoginPageCubit>().signIn(
                                   email: widget.emailController.text,
                                   password: widget.passwordController.text);
                               if (state.isLogged == true) {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (_) => const HomePage()));
+                                context.go('/');
                               }
                             }
                           },
