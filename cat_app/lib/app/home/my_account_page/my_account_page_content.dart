@@ -1,4 +1,4 @@
-import 'package:cat_app/app/home/default_page.dart';
+import 'package:cat_app/app/home/home_page.dart';
 import 'package:cat_app/app/home/my_account_page/cubit/my_account_cubit.dart';
 import 'package:cat_app/repositories/cats_repository.dart';
 import 'package:flutter/material.dart';
