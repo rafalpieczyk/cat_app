@@ -10,7 +10,7 @@ class MyAccountPageContent extends StatelessWidget {
     required this.widget,
   }) : super(key: key);
 
-  final DefaultPage widget;
+  final HomePage widget;
 
   @override
   Widget build(BuildContext context) {

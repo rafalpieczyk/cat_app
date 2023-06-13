@@ -6,8 +6,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
 
-class DefaultPage extends StatefulWidget {
-  const DefaultPage({
+class HomePage extends StatefulWidget {
+  const HomePage({
     Key? key,
     required this.user,
   }) : super(key: key);
@@ -15,10 +15,10 @@ class DefaultPage extends StatefulWidget {
   final User user;
 
   @override
-  State<DefaultPage> createState() => _DefaultPageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _DefaultPageState extends State<DefaultPage> {
+class _HomePageState extends State<HomePage> {
   var currentIndex = 0;
   @override
   Widget build(BuildContext context) {

@@ -33,8 +33,8 @@ class MyApp extends StatelessWidget {
 }
 
 // ignore: must_be_immutable
-class HomePage extends StatelessWidget {
-  const HomePage({
+class StartPage extends StatelessWidget {
+  const StartPage({
     Key? key,
   }) : super(key: key);
 
@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
         if (user == null) {
           return LoginPage();
         }
-        return DefaultPage(user: user);
+        return HomePage(user: user);
       },
     );
   }

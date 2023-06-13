@@ -10,7 +10,7 @@ class CatRouter {
       GoRoute(
         path: '/',
         pageBuilder: (context, state) {
-          return const MaterialPage(child: HomePage());
+          return const MaterialPage(child: StartPage());
         },
       ),
       GoRoute(
