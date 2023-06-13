@@ -5,7 +5,9 @@ import 'package:cat_app/app/home/my_cat_page/my_cat_page_content.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class HomePage extends StatefulWidget {
   const HomePage({
     Key? key,
