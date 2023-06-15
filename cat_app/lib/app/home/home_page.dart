@@ -25,10 +25,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(45),
-        child: CatBar(),
-      ),
+      appBar: const CatAppBar(),
       body: Builder(builder: (context) {
         if (currentIndex == 0) {
           return const MyCatPageContent();

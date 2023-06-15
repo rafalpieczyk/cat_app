@@ -9,10 +9,7 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(45),
-        child: CatBar(),
-      ),
+      appBar: const CatAppBar(),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -32,3 +29,5 @@ class SettingsPage extends StatelessWidget {
     );
   }
 }
+
+
